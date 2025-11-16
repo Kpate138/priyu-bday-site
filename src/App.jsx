@@ -12,10 +12,11 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
  */
 
 // ------- tiny motion-less wrappers (safe everywhere) -------
-const omitMotion = (p: any) => {
-    if (!p || typeof p !== "object") return p;
-    const { variants, initial, animate, exit, transition, layout, ...rest } = p;
-    return rest;
+/** @param {any} p */
+const omitMotion = (p) => {
+  if (!p || typeof p !== "object") return p;
+  const { variants, initial, animate, exit, transition, layout, ...rest } = p;
+  return rest;
 };
 const motion = {
     div: (props: any) => <div {...omitMotion(props)} />,
